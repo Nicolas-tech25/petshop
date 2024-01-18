@@ -53,4 +53,13 @@ const StyledHeader = styled.header`
     flex-direction: column;
     padding-bottom: 1rem;
   }
+
+  @media (min-width: 700px) {
+    div {
+      flex-direction: row;
+    }
+    h1 a {
+      font-size: 2rem;
+    }
+  }
 `;
