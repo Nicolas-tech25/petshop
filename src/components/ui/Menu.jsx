@@ -1,11 +1,11 @@
+import Link from "next/link";
 export default function Menu() {
   return (
-    <Nav>
+    <nav>
       <Link href="/">Blog</Link>
       <Link href="/produtos">Produtos</Link>
-      <Link href="/">Sobre</Link>
-      <Link href="/sobre">Home</Link>
+      <Link href="/sobre">Sobre</Link>
       <Link href="/contato">Contato</Link>
-    </Nav>
+    </nav>
   );
 }
