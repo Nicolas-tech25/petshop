@@ -56,7 +56,7 @@ const StyledContato = styled.section`
     margin: 0 auto;
     width: 50%;
     height: 50%;
-    background-color: #94919186;
+    background-color: #9e9d9d62;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     padding: 20px;
