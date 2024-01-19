@@ -16,3 +16,8 @@ export default function Sobre() {
     </>
   );
 }
+const StyledSobre = styled.section`
+  h2::before {
+    content: "💡";
+  }
+`;

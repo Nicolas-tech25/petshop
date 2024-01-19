@@ -2,13 +2,13 @@ import Head from "next/head";
 export default function Produtos() {
   return (
     <>
-      <Head>
+      <StyledProdutos>
         <title>Produtos - PetShop</title>
         <meta
           name="description"
           content="Produtos pra comprar pro seu Pet"
         ></meta>
-      </Head>
+      </StyledProdutos>
 
       <section>
         <h2>Conheça nosso Petshop</h2>
@@ -16,3 +16,8 @@ export default function Produtos() {
     </>
   );
 }
+const StyledProdutos = styled.section`
+  h2::before {
+    content: "🎁";
+  }
+`;
