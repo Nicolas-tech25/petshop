@@ -1,3 +1,4 @@
+import Container from "@/components/ui/Container";
 import Head from "next/head";
 import styled from "styled-components";
 
@@ -15,30 +16,30 @@ export default function Sobre() {
       <StyledSobre>
         <h2>Sobre nosso PetShop</h2>
 
-        <h3>Missão</h3>
+        <Container>
+          <h3>Missão</h3>
 
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic amet,
-          explicabo qui assumenda expedita veniam provident ipsum quas maxime,
-          delectus temporibus eos. Natus, consequuntur earum!
-        </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+            totam veritatis facilis asperiores placeat. Quos tempore
+            exercitationem soluta recusandae eum.
+          </p>
 
-        <h3>Visão</h3>
+          <h3>Visão</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus
+            aliquam praesentium aliquid soluta! Vel quasi earum debitis ullam,
+            aut maxime ratione soluta tenetur. Harum repellat dolor, inventore
+            cumque ipsam totam, fugiat ipsum delectus nulla quas fugit quam
+            reiciendis perspiciatis quaerat?
+          </p>
 
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus
-          cupiditate ut fuga libero quisquam placeat, dolor aliquam. Saepe
-          sapiente praesentium quis ad distinctio numquam, corrupti vel non
-          aliquam veniam accusamus eos. Nihil, nisi labore aliquid tempora
-          provident excepturi quaerat nobis?
-        </p>
-
-        <h3>Valores</h3>
-
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident,
-          culpa eos dolorum velit dolor tempora!
-        </p>
+          <h3>Valores</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+            est ducimus libero consequuntur nulla odit.
+          </p>
+        </Container>
       </StyledSobre>
     </>
   );

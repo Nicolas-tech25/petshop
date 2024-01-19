@@ -1,3 +1,4 @@
+import Container from "@/components/ui/Container";
 import Head from "next/head";
 import styled from "styled-components";
 
@@ -15,30 +16,35 @@ export default function Produtos() {
       <StyledProdutos>
         <h2>Conheça nossos produtos</h2>
 
-        <article>
-          <h3>Banho</h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum, aut
-            in laudantium consequuntur ullam blanditiis. Ea vero quaerat
-            voluptatum mollitia inventore beatae, perspiciatis quia optio.
-          </p>
-        </article>
-        <article>
-          <h3>Tosa</h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum, aut
-            in laudantium consequuntur ullam blanditiis. Ea vero quaerat
-            voluptatum mollitia inventore beatae, perspiciatis quia optio.
-          </p>
-        </article>
-        <article>
-          <h3>Diversão</h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum, aut
-            in laudantium consequuntur ullam blanditiis. Ea vero quaerat
-            voluptatum mollitia inventore beatae, perspiciatis quia optio.
-          </p>
-        </article>
+        <Container>
+          <article>
+            <h3>Banho</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
+              quibusdam, optio iusto accusamus dignissimos reprehenderit enim?
+              Dolores, porro sequi laborum nulla eveniet nesciunt ducimus cum
+              culpa delectus quos, laudantium beatae.
+            </p>
+          </article>
+          <article>
+            <h3>Tosa</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
+              quibusdam, optio iusto accusamus dignissimos reprehenderit enim?
+              Dolores, porro sequi laborum nulla eveniet nesciunt ducimus cum
+              culpa delectus quos, laudantium beatae.
+            </p>
+          </article>
+          <article>
+            <h3>Castração</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
+              quibusdam, optio iusto accusamus dignissimos reprehenderit enim?
+              Dolores, porro sequi laborum nulla eveniet nesciunt ducimus cum
+              culpa delectus quos, laudantium beatae.
+            </p>
+          </article>
+        </Container>
       </StyledProdutos>
     </>
   );
@@ -47,5 +53,14 @@ export default function Produtos() {
 const StyledProdutos = styled.section`
   h2::before {
     content: "🎁 ";
+  }
+  article {
+    padding: 1rem;
+  }
+  @media (min-width: 800px) {
+    div {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 `;
