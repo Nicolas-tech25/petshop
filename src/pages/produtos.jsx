@@ -1,23 +1,51 @@
 import Head from "next/head";
+import styled from "styled-components";
+
 export default function Produtos() {
   return (
     <>
-      <StyledProdutos>
+      <Head>
         <title>Produtos - PetShop</title>
         <meta
           name="description"
-          content="Produtos pra comprar pro seu Pet"
-        ></meta>
-      </StyledProdutos>
+          content="Venda de ração, coleira, brinquedo e outros produtos para o seu pet"
+        />
+        <meta name="keywords" content="Ração, coleira, brinquedo, remédio" />
+      </Head>
+      <StyledProdutos>
+        <h2>Conheça nossos produtos</h2>
 
-      <section>
-        <h2>Conheça nosso Petshop</h2>
-      </section>
+        <article>
+          <h3>Banho</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum, aut
+            in laudantium consequuntur ullam blanditiis. Ea vero quaerat
+            voluptatum mollitia inventore beatae, perspiciatis quia optio.
+          </p>
+        </article>
+        <article>
+          <h3>Tosa</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum, aut
+            in laudantium consequuntur ullam blanditiis. Ea vero quaerat
+            voluptatum mollitia inventore beatae, perspiciatis quia optio.
+          </p>
+        </article>
+        <article>
+          <h3>Diversão</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum, aut
+            in laudantium consequuntur ullam blanditiis. Ea vero quaerat
+            voluptatum mollitia inventore beatae, perspiciatis quia optio.
+          </p>
+        </article>
+      </StyledProdutos>
     </>
   );
 }
+
 const StyledProdutos = styled.section`
   h2::before {
-    content: "🎁";
+    content: "🎁 ";
   }
 `;
