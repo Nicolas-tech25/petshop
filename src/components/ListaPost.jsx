@@ -1,6 +1,8 @@
 import Link from "next/link";
 import styled from "styled-components";
 export default function ListaPosts({ posts }) {
+  /* Se não houver nada aparece o primeiro if, caso tenha algum post ele anulara o 1º if e executara o posts */
+  if (posts.length === 0) return <h3>Ainda não há posts</h3>;
   return (
     <StyledListaPosts>
       {posts.map((post) => {
