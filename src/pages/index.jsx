@@ -9,7 +9,7 @@ export default function Home() {
   useEffect(() => {
     const carregarPosts = async () => {
       try {
-        const resposta = await fetch(`http://10.20.46.20:2112/posts`);
+        const resposta = await fetch(`http://10.20.46.26:2112/posts`);
         const dados = await resposta.json();
         setListaDePosts(dados);
       } catch (error) {

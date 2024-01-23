@@ -1,8 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PetShop: projeto Next.js
 
-## Getting Started
+## Branch 12-desafio-consumindo-dados-usando-modo-React
 
-First, run the development server:
+### Orientações gerais
+
+- Você precisará programar a página inicial (arquivo index) para que, através da **API Fake**, os dados dos posts sejam consumidos e carregados/repassados ao `ListaPosts`.
+- Para isso, você precisa verificar qual é a **URL do Endpoint da API** e programar recursos utilizando `useState` e `useEffect`.
+- No caso do `useState`, crie as constantes **listaDePosts** e **setListaDePosts**.
+- No caso do `useEffect`, programe o necessário para usar a função `fetch`.
+
+## Branch 11-usando-json-server-como-fake-api
+
+### Etapas (faça tudo usando o Node.js Command Prompt)
+
+1. Instalação global do `json-server`: `npm install -g json-server`
+2. Colocação do arquivo `db.json` na raíz do projeto (este arquivo funcionará como um banco de dados para a API)
+3. Pegar o IP da máquina usando `ipconfig`
+4. Adicionar um script npm no `package.json` com a seguinte configuração:
+
+`"api" : "json-server --host IP.DA.SUA.MAQUINA db.json --port NÚMERO"`
+
+5. Executar a API usando `npm run api`
+
+## Branch 10-desafio-transformar-lista-de-posts-em-componente
+
+- Crie na pasta `components` um componente chamado `ListaPosts`
+- Modifique a página inicial para que ela utilize este componente.
+
+**Atenção:** toda a lógica/programação feita em relação ao <StyledListaPosts> deve ser migrada para o novo componente, exceto o `import` do `arrayPosts` que deve continuar na página inicial.
+
+Portanto, você deverá repassar o `arrayPosts` via `props` para o novo componente.
+
+## Branch 09-desafio-carregamento-do-array-posts
+
+- Importe o array de posts para a página inicial
+- Modifique o <StyledListaPosts> para que os <article> sejam gerados com auxílio do `map` processando os dados do arquivo `array-posts.js`. Portanto, o `map` irá gerar 4 <article> já que o `array-posts.js` possui 4 objetos/posts.
+
+**Atenção**: para este desafio NÃO É necessário usar `useState` e/ou `useEffect`.
+
+## Branch 05
+
+### IMPORTANTE!
+
+Após instalar o `styled-components`, ative o suporte à compilação dele pelo Next.js modificando o arquivo `next.config.js`:
+
+```javascript
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  // adicione estas linhas
+  compiler: {
+    styledComponents: true,
+  },
+};
+
+module.exports = nextConfig;
+```
+
+## Recursos utilizados
+
+- Next.js
+- API Fake/Local
+- API via Firebase Realtime Database
+- Componentes
+- Rotas
+- Map, Filter
+- Manipulação de formulário
+- Publicação na Vercel e na Netlify
+
+## First, run the development server:
 
 ```bash
 npm run dev
@@ -13,28 +79,3 @@ pnpm dev
 # or
 bun dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
