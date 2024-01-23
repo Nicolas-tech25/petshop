@@ -5,6 +5,7 @@ import { useState } from "react";
 
 /* Executada no Servidor back-end */
 export async function getStaticProps() {
+  console.log("Código de servidor (não aprece no Cliente)...");
   try {
     const resposta = await fetch(`http://10.20.46.26:2112/posts`);
     const dados = await resposta.json();
