@@ -2,12 +2,12 @@ import Head from "next/head";
 import styled from "styled-components";
 import ListaPosts from "@/components/ListaPost.jsx";
 import { useState } from "react";
-
+import serverApi from "./api/server";
 /* Executada no Servidor back-end */
 export async function getStaticProps() {
   console.log("Código de servidor (não aprece no Cliente)...");
   try {
-    const resposta = await fetch(`http://10.20.46.26:2112/posts`);
+    const resposta = await fetch(`${serverApi}/posts`);
     const dados = await resposta.json();
     if (!resposta.ok) {
       throw new Error(`Erro: ${resposta.status} - ${resposta.statusText}`);
