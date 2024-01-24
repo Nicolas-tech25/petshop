@@ -19,6 +19,9 @@ export async function getStaticProps() {
     };
   } catch (error) {
     console.error("Deu ruim: " + error.message);
+    return {
+      notFound: true,
+    };
   }
 }
 

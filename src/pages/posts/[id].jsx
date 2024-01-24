@@ -18,7 +18,12 @@ export async function getStaticProps({ params }) {
         post: dados,
       },
     };
-  } catch (error) {}
+  } catch (error) {
+    console.error("Deu ruim: " + error.message);
+    return {
+      notFound: true,
+    };
+  }
 }
 
 export async function getStaticPaths() {
