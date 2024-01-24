@@ -38,7 +38,7 @@ export default function Home({ posts, categorias }) {
   const [categoria, setCategoria] = useState(null);
 
   const aplicarFiltro = (event) => {
-    const categoriaEscolhida = event.currentTarget.innerText;
+    const categoriaEscolhida = event.currentTarget.textContent;
 
     const postsFiltrados = categoriaEscolhida
       ? posts.filter((post) => post.categoria === categoriaEscolhida)
@@ -83,6 +83,7 @@ const StyledHome = styled.section`
 `;
 const StyledCategorias = styled.section`
   button {
+    text-transform: capitalize;
     background-color: var(--cor-primaria-fundo);
     border: none;
     color: white;
