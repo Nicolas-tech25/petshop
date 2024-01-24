@@ -62,6 +62,13 @@
       "subtitulo": "Os cães são animais bastantes sociáveis e te entendem.",
       "descricao": "Os cachorros são capazes de detectar mudanças sutis na expressão facial humana e podem até mesmo reconhecer emoções como alegria e tristeza ",
       "categoria": "comportamento"
+    },
+    {
+      "id": 10,
+      "titulo": "Fato curioso sobre saga Evil Dead",
+      "subtitulo": "Tudo sobre esta saga incrível do terror",
+      "descricao": "O ator Bruce Campbell, que interpreta o personagem principal Ash Williams, também é um dos produtores.",
+      "categoria": "filmes"
     }
   ]
 }
