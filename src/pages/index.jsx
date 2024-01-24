@@ -36,6 +36,7 @@ export async function getStaticProps() {
 export default function Home({ posts, categorias }) {
   const [listaDePosts, setListaDePosts] = useState(posts);
   const [categoria, setCategoria] = useState(null);
+  const [filtroAtivo, setFiltroAtivo] = useState(false);
 
   const aplicarFiltro = (event) => {
     const categoriaEscolhida = event.currentTarget.textContent;
@@ -46,6 +47,11 @@ export default function Home({ posts, categorias }) {
 
     setCategoria(categoriaEscolhida);
     setListaDePosts(postsFiltrados);
+    setFiltroAtivo(true);
+  };
+  const limparFiltro = () => {
+    setFiltroAtivo(false);
+    setListaDePosts(posts);
   };
 
   return (
@@ -69,6 +75,11 @@ export default function Home({ posts, categorias }) {
               </button>
             );
           })}
+          {filtroAtivo && (
+            <button onClick={limparFiltro} className="limpar">
+              Limpar filtro
+            </button>
+          )}
         </StyledCategorias>
         <ListaPosts posts={listaDePosts} />
       </StyledHome>
@@ -97,6 +108,15 @@ const StyledCategorias = styled.section`
     border-radius: 10px;
     &:hover {
       background-color: #45a049;
+    }
+  }
+  .limpar {
+    background-color: #a1a1a1;
+    &:hover {
+      background-color: slategray;
+    }
+    &::before {
+      content: "🧼";
     }
   }
 `;
