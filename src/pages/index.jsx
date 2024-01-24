@@ -35,6 +35,18 @@ export async function getStaticProps() {
 
 export default function Home({ posts, categorias }) {
   const [listaDePosts, setListaDePosts] = useState(posts);
+  const [categoria, setCategoria] = useState(null);
+
+  const aplicarFiltro = (event) => {
+    const categoriaEscolhida = event.currentTarget.innerText;
+
+    const postsFiltrados = categoriaEscolhida
+      ? posts.filter((post) => post.categoria === categoriaEscolhida)
+      : posts;
+
+    setCategoria(categoriaEscolhida);
+    setListaDePosts(postsFiltrados);
+  };
 
   return (
     <>
@@ -49,11 +61,15 @@ export default function Home({ posts, categorias }) {
       <StyledHome>
         <h2>Pet Notícias</h2>
 
-        <div>
+        <StyledCategorias>
           {categorias.map((categoria, indice) => {
-            return <button key={indice}>{categoria}</button>;
+            return (
+              <button key={indice} onClick={aplicarFiltro}>
+                {categoria}
+              </button>
+            );
           })}
-        </div>
+        </StyledCategorias>
         <ListaPosts posts={listaDePosts} />
       </StyledHome>
     </>
@@ -64,11 +80,13 @@ const StyledHome = styled.section`
   h2::before {
     content: "📰 ";
   }
+`;
+const StyledCategorias = styled.section`
   button {
     background-color: var(--cor-primaria-fundo);
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 10px 22px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
