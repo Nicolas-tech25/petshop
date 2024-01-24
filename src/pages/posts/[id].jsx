@@ -27,8 +27,10 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
+  /* Paths fica vazio pois todos os caminhos devem ser gerados sobre demanda, ou seja no momento que a página foi aberta */
   return {
     paths: [],
+    /* fallback fica como "blocking" para garantir que a página será renderizada somente após da conclusão da geração dos caminhos e dos dados */
     fallback: "blocking",
   };
 }
