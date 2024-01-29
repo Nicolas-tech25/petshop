@@ -81,3 +81,5 @@ module.exports = nextConfig;
 - Map, Filter
 - Manipulação de formulário
 - Publicação na Vercel e na Netlify
+
+https://petshop-nicolas-default-rtdb.firebaseio.com/
