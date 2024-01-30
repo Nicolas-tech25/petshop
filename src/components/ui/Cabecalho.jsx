@@ -40,7 +40,7 @@ const StyledHeader = styled.header`
 
     &:hover,
     &:focus {
-      color: var(--cor-secundaria-hover);
+      color: var(--cor-secundaria-fundo);
     }
   }
   img {

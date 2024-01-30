@@ -49,7 +49,7 @@ const StyledNav = styled.nav`
 
     &:hover,
     &:focus {
-      background-color: var(--cor-primaria-fundo-hover);
+      background-color: var(--cor-secundaria-fundo);
     }
 
     @media screen and (min-width: 700px) {
@@ -59,6 +59,6 @@ const StyledNav = styled.nav`
   }
 
   a.ativo {
-    background-color: black;
+    background-color: var(--cor-secundaria-fundo);
   }
 `;
