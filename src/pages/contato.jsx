@@ -6,7 +6,11 @@ import serverApi from "./api/server";
 import { useRouter } from "next/router";
 
 export default function Contato() {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   let router = useRouter();
 
   const enviarContato = async (dados) => {
@@ -43,6 +47,7 @@ export default function Contato() {
 
         <Container>
           <form
+            autoComplete="off"
             action=""
             method="post"
             onSubmit={handleSubmit((dados) => {
@@ -51,21 +56,36 @@ export default function Contato() {
           >
             <div>
               <label htmlFor="nome">Nome:</label>
-              <input {...register("nome")} type="text" name="nome" id="nome" />
+              <input
+                {...register("nome", { required: true })}
+                type="text"
+                name="nome"
+                id="nome"
+              />
             </div>
+
+            {/*  é conhecido "Optional chaing [encadeamento opcional] é usado para evitar erros caso um objeto com arrays seja null ou undefinded" */}
+
+            {errors.nome?.type == "required" && (
+              <p>Você deve digitar o nome!</p>
+            )}
+
             <div>
               <label htmlFor="email">Email:</label>
               <input
-                {...register("email")}
+                {...register("email", { required: true })}
                 type="email"
                 name="email"
                 id="email"
               />
             </div>
+            {errors.email?.type == "required" && (
+              <p>Você deve digitar o email!</p>
+            )}
             <div>
               <label htmlFor="mensagem">Mensagem:</label>
               <textarea
-                {...register("nome")}
+                {...register("mensagem", { required: true, minLength: 20 })}
                 maxLength={500}
                 type="email"
                 name="mensagem"
@@ -74,7 +94,12 @@ export default function Contato() {
                 rows={8}
               ></textarea>
             </div>
-
+            {errors.mensagem?.type == "required" && (
+              <p>Você deve digitar a mensagem!</p>
+            )}
+            {errors.mensagem?.type == "minLength" && (
+              <p>Escreva pelo menos 20 caracteres!</p>
+            )}
             <div>
               <button type="submit">Enviar mensagem</button>
             </div>
@@ -99,8 +124,15 @@ const StyledContato = styled.section`
     padding: 20px;
   }
 
-  form div {
+  form > div {
     margin: 2rem;
+    & + p {
+      color: red;
+      font-size: 0.9rem;
+      font-style: italic;
+      margin-left: 30px;
+      margin-bottom: 10px;
+    }
   }
 
   label {
